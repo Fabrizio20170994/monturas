@@ -10,3 +10,28 @@
     border-color: #42b574;
 }
 
+.titulo {
+    text-align: center;
+}
+
+.registro {
+    margin-top: 15px;
+}
+
+body{
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table {
+    color: #fff;
+    margin-top: 15px;
+}
+
+.campos {
+    margin-top: 15px;
+}
+
+.container-table{
+    margin-top: 15px;
+}

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/5957beb32e.js" crossorigin="anonymous"></script>
   <title>Pro Óptica</title>
   <script src="index.js"></script>
 </head>
@@ -19,25 +20,31 @@
     <a class="navbar-brand" href="#">
       <img src="img/logo-light" alt="">
     </a>
-    <button onclick="crearTabla()" class="btn btn-primary">Consultar Ventas</button>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button onclick="toogleNightMode()" class="btn btn-primary"><i class="fas fa-moon"></i></button>
+      <button onclick="crearTabla()" class="btn btn-primary">Consultar Ventas</button>
+    </div>
+
   </nav>
 
 
 
 
 
-  <div class="container-fluid">
-    <form>
+  <div class="container-fluid registro">
+    <p class="h2 titulo">Registrar Venta</p>
+    <form class="campos">
       <div class="form-group">
         <label for="exampleInputEmail1">Nombre del Cliente</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nombre Cliente">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Nombre Cliente">
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Nombre del Vendedor</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nombre Vendedor">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Nombre del Vendedor</label>
+        <label for="exampleInputPassword1">Monto</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nombre Vendedor">
       </div>
       <div class="form-group">
@@ -45,38 +52,40 @@
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nombre Vendedor">
       </div>
       <button type="submit" class="btn btn-primary">Registrar Venta</button>
-    </form>
+    </form c>
   </div>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody >
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-
+  <div class="container-fluid container-table">
+    <p class="h2 titulo">Consultas</p>
+    <table class="table table-bordered">
+      <thead class = "table-head">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 
   <!-- Optional JavaScript -->
