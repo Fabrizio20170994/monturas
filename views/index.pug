@@ -1,0 +1,79 @@
+extends layout
+
+block content
+  .container-fluid.container-table
+    form(action='/redirect' method='post')
+      button.btn.btn-primary.consultas Volver
+    p.h2.titulo Registro de Ventas
+    table.table.table-bordered
+      thead.table-head
+        tr.header-tabla
+          th(scope='col') Cod_Venta
+          th(scope='col') Cod_Cliente
+          th(scope='col') Cod_Montura
+          th(scope='col') Medida_P
+          th(scope='col') Medida_S
+          th(scope='col') Cantidad
+          th(scope='col') Monto
+          th(scope='col') Modalidad
+          th(scope='col') Cod_Vendedor
+      tbody
+      tr
+        each val in tabla
+          tr
+          td= val.CODIGO_VENTA
+          td= val.CODIGO_CLIENTE
+          td= val.CODIGO_MONTURA
+          td= val.MEDIDA_P
+          td= val.MEDIDA_S
+          td= val.CANTIDAD
+          td= val.MONTO
+          td= val.MODALIDAD
+          td= val.CODIGO_VENDEDOR
+
+  style.
+    .btn-primary {
+    color: #fff;
+    background-color: #42b574;
+    border-color: #42b574;
+      }
+
+      .btn-primary:hover {
+          color: #fff;
+          background-color: #42b574;
+          border-color: #42b574;
+      }
+
+      .titulo {
+          text-align: center;
+      }
+
+      .registro {
+          margin-top: 15px;
+      }
+
+      body{
+          background-color: #343a40;
+          color: #fff;
+      }
+
+      .table {
+          color: #fff;
+          margin-top: 15px;
+      }
+
+      .campos {
+          margin-top: 15px;
+      }
+
+      .container-table{
+          margin-top: 15px;
+      }
+
+      .consultas {
+          margin: 0 8px;
+      }
+      .header-tabla{
+        background-color: #42b574;
+        color: #343a40;
+      }

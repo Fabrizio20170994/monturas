@@ -1,0 +1,45 @@
+.btn-primary {
+    color: #fff;
+    background-color: #42b574;
+    border-color: #42b574;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #42b574;
+    border-color: #42b574;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.registro {
+    margin-top: 15px;
+}
+
+body{
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table {
+    color: #fff;
+    margin-top: 15px;
+}
+
+.campos {
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.container-table{
+    margin-top: 15px;
+}
+
+.consultas {
+    margin: 0 8px;
+}
+
+
