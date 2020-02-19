@@ -15,7 +15,7 @@
 }
 
 .registro {
-    margin-top: 15px;
+    margin-top: 28px;
 }
 
 body{
@@ -40,6 +40,12 @@ body{
 
 .consultas {
     margin: 0 8px;
+}
+
+
+img {
+    position: relative;
+    top:-17px;
 }
 
 

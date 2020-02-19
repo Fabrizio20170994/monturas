@@ -4,7 +4,7 @@ block content
   .container-fluid.container-table
     form(action='/redirect' method='post')
       button.btn.btn-primary.consultas Volver
-    p.h2.titulo Registro de Ventas
+    p.h2.titulo Reporte de Stock
     table.table.table-bordered
       thead.table-head
       tr.header-tabla
@@ -14,15 +14,17 @@ block content
       tr
         each val in tabla.tablas
           tr
-            td= val.CODIGO_VENTA
-            td= val.CODIGO_CLIENTE
             td= val.CODIGO_MONTURA
-            td= val.MEDIDA_P
-            td= val.MEDIDA_S
-            td= val.CANTIDAD
-            td= val.MONTO
-            td= val.MODALIDAD
-            td= val.CODIGO_VENDEDOR
+            td= val.FECHA_DISEÑO
+            td= val.MARCA
+            td= val.TIPO_LENTE
+            td= val.CALIBRE
+            td= val.ANCHO_PUENTE
+            td= val.LONG_VARILLA
+            td= val.COLOR
+            td= val.PRECIO_U
+            td= val.EXISTENCIAS
+
 
   style.
     .btn-primary {

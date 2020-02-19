@@ -1,0 +1,134 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  // Bootstrap CSS
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh' crossorigin='anonymous')
+  link(rel='stylesheet' href='stylesheets/styles.css')
+  script(src='https://kit.fontawesome.com/5957beb32e.js' crossorigin='anonymous')
+  title Pro &Oacute;ptica
+  script(src='index.js')
+nav.navbar.navbar-light.bg-dark
+  a.navbar-brand(href='https://www.prooptica.pe/')
+    img(src='images/logo-light' alt='')
+  .btn-group(role='group' aria-label='Basic example')
+    form.campos(action='/ventas' method='post')
+      button.btn.btn-primary(type='submit') Consultar Ventas
+    form.campos(action='/vendedores' method='post')
+      button.btn.btn-primary(type='submit') Mejores Vendedores
+    form.campos(action='/vendidas' method='post')
+      button.btn.btn-primary(type='submit') Monturas m&aacute;s vendidas
+    form.campos(action='/monturas' method='post')
+      button.btn.btn-primary(type='submit') Consultar Stock de Montura
+    form.campos(action='/movimientos' method='post')
+      button.btn.btn-primary(type='submit') Movimientos según Montura
+      select#exampleFormControlSelect1.form-control(name= 'montura_movimientos')
+         each val in tablas.monturas
+             option(value= val.CODIGO_MONTURA)= val.CODIGO_MONTURA
+
+.container-fluid.registro
+  p.h2.titulo Registrar Venta
+  form.campos(action='/' method='post')
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleInputEmail1') Cliente
+        select#exampleFormControlSelect1.form-control(name= 'venta_codigo_cliente')
+            each val in tablas.clientes
+                option(value= val.CODIGO_CLIENTE)= val.NOMBRE
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Modalidad
+        select#exampleFormControlSelect1.form-control(name= 'venta_modalidad')
+            option(value="Efectivo") Efectivo
+            option(value="Tarjeta") Tarjeta
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') C&oacute;digo de Montura
+        select#exampleFormControlSelect1.form-control(name= 'venta_codigo_montura')
+            each val in tablas.monturas
+                option(value= val.CODIGO_MONTURA)= val.CODIGO_MONTURA
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Vendedor
+        select#exampleFormControlSelect1.form-control(name= 'venta_codigo_vendedor')
+            each val in tablas.vendedores
+                option(value= val.CODIGO_VENDEDOR)= val.NOMBRE
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Medida Principal
+        input#exampleInputPassword1.form-control(type='text' name='venta_medida_p' placeholder='Medida Principal')
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Medida Secundaria
+        input#exampleInputPassword1.form-control(type='text' name='venta_medida_s' placeholder='Medida Secundaria')
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Cantidad
+        input#exampleInputPassword1.form-control(type='text' name='venta_cantidad' placeholder='Cantidad')
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Monto
+        input#exampleInputPassword1.form-control(type='text' name='venta_monto' placeholder='S/.')
+    button.btn.btn-primary(type='submit') Registrar Venta
+
+
+
+
+// Optional JavaScript
+// jQuery first, then Popper.js, then Bootstrap JS
+script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous')
+
+
+
+
+
+
+
+
+
+  style.
+    .btn-primary {
+    color: #fff;
+    background-color: #42b574;
+    border-color: #42b574;
+      }
+
+      .btn-primary:hover {
+          color: #fff;
+          background-color: #42b574;
+          border-color: #42b574;
+      }
+
+      .titulo {
+          text-align: center;
+      }
+
+      .registro {
+          margin-top: 15px;
+      }
+
+      body{
+          background-color: #343a40;
+          color: #fff;
+      }
+
+      .table {
+          color: #fff;
+          margin-top: 15px;
+      }
+
+      .campos {
+          margin-top: 15px;
+      }
+
+      .container-table{
+          margin-top: 15px;
+      }
+
+      .consultas {
+          margin: 0 8px;
+      }
+      .header-tabla{
+        background-color: #42b574;
+        color: #343a40;
+      }
+
