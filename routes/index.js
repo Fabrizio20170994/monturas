@@ -4,7 +4,8 @@ var router = express.Router();
 let ventas = require("../controllers/ventas");
 let registro = require("../controllers/registro");
 
-/* GET home page. */
+
+// Manejo de rutas de la aplicación
 router.get('/', ventas.principal);
 
 
@@ -28,4 +29,7 @@ module.exports = router;
 
 
 router.post('/movimientos', ventas.movimientos);
+module.exports = router;
+
+router.post('/seguimiento', ventas.seguimiento);
 module.exports = router;

@@ -4,7 +4,7 @@ block content
   .container-fluid.container-table
     form(action='/redirect' method='post')
       button.btn.btn-primary.consultas Volver
-    p.h2.titulo Movimientos de Montura #{tabla.tablas.CODIGO_MONTURA}
+    p.h2.titulo Movimientos de Montura #{tabla.tablas[0].CODIGO_MONTURA}
     table.table.table-bordered
       thead.table-head
       tr.header-tabla
@@ -18,7 +18,9 @@ block content
             td= val.CODIGO_MONTURA
             td= val.TIPO_MOV
             td= val.CODIGO_VENTA
+            td= val.CANTIDAD
             td= val.CODIGO_COMPRA
+            td= val.CODIGO_CAJA
 
   style.
     .btn-primary {

@@ -14,18 +14,17 @@ nav.navbar.navbar-light.bg-dark
     img(src='images/logo-light' alt='')
   .btn-group(role='group' aria-label='Basic example')
     form.campos(action='/ventas' method='post')
-      button.btn.btn-primary(type='submit') Consultar Ventas
-    form.campos(action='/vendedores' method='post')
-      button.btn.btn-primary(type='submit') Mejores Vendedores
-    form.campos(action='/vendidas' method='post')
-      button.btn.btn-primary(type='submit') Monturas m&aacute;s vendidas
+      button.btn-sm.btn-primary(type='submit') Consultar Ventas
     form.campos(action='/monturas' method='post')
-      button.btn.btn-primary(type='submit') Consultar Stock de Montura
+      button.btn-sm.btn-primary(type='submit') Consultar Stock de Montura
     form.campos(action='/movimientos' method='post')
-      button.btn.btn-primary(type='submit') Movimientos según Montura
+      button.btn-sm.btn-primary(type='submit') Movimientos según Montura
       select#exampleFormControlSelect1.form-control(name= 'montura_movimientos')
          each val in tablas.monturas
              option(value= val.CODIGO_MONTURA)= val.CODIGO_MONTURA
+    form.campos(action='/seguimiento' method='post')
+      button.btn-sm.btn-primary(type='submit') Seguimiento de Ventas
+      input#exampleInputPassword1.form-control(type='text' name='codigo_seguimiento' placeholder='Código de Venta')
 
 .container-fluid.registro
   p.h2.titulo Registrar Venta
@@ -66,8 +65,36 @@ nav.navbar.navbar-light.bg-dark
       .form-group.col-md-6
         label(for='exampleInputPassword1') Monto
         input#exampleInputPassword1.form-control(type='text' name='venta_monto' placeholder='S/.')
+    .form-row
+      .form-group.col
+        label(for='exampleInputPassword1') Fecha de Venta
+        input#exampleInputPassword1.form-control(type='date' name='fecha_venta' placeholder='Fecha')
     button.btn.btn-primary(type='submit') Registrar Venta
 
+
+.container-fluid.registro
+  p.h2.titulo Consultar Tops
+  p.h4 Vendedores
+  form.campos(action='/vendedores' method='post')
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleInputEmail1') Número de Vendedores a mostrar
+        input#exampleInputPassword1.form-control(type='text' name='n_vendedores' placeholder='Número de Vendedores')
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Año a filtrar
+        input#exampleInputPassword1.form-control(type='text' name='año_vendedores' placeholder='Año')
+    button.btn.btn-primary(type='submit') Consultar Top Vendedores
+.container-fluid.registro
+  p.h4 Monturas
+  form.campos(action='/vendidas' method='post')
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleInputEmail1') Número de Monturas a mostrar
+        input#exampleInputPassword1.form-control(type='text' name='n_monturas' placeholder='Número de Monturas')
+      .form-group.col-md-6
+        label(for='exampleInputPassword1') Año a filtrar
+        input#exampleInputPassword1.form-control(type='text' name='año_monturas' placeholder='Año')
+    button.btn.btn-primary(type='submit') Consultar Top Monturas
 
 
 
